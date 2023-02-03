@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/my-page', 'App\Http\Controllers\MyPlaceController@Hello');
+Route::get('/post', 'App\Http\Controllers\PostController@index');
+Route::get('/order', 'App\Http\Controllers\OrderController@index');
