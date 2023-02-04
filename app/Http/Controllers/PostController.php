@@ -13,7 +13,31 @@ class PostController  extends Controller
         // foreach ($posts as $post) {
         //     dump($post->title);
         // }
-        $
+        
         // dd($post->moder);
+    }
+
+    public function create () {
+        $postsArr = [
+            [
+                'title' => 'firts title of post from VSC',
+                'content' => 'first content of post',
+                'image' => 'image.jpeg',
+                'likes' => '100',
+                'is_published' => 1,
+            ],
+            [
+                'title' => 'second title of post from VSC',
+                'content' => 'second content of post',
+                'image' => 'image2.jpeg',
+                'likes' => '200',
+                'is_published' => 1,
+            ],
+        ];
+
+        foreach ($postsArr as $item) {
+            Post::create($item);
+        };
+
     }
 }
