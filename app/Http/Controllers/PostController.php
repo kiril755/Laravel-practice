@@ -9,12 +9,9 @@ use Attribute;
 class PostController  extends Controller
 {
     public function index () {
-        $posts = Post::where('is_published', 1)->first(); 
-        // foreach ($posts as $post) {
-        //     dump($post->title);
-        // }
-        
-        // dd($post->moder);
+        $posts = Post::all();
+
+        return view('posts', compact('posts'));
     }
 
     public function create () {
