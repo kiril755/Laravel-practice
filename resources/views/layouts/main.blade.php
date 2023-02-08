@@ -15,7 +15,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('main.index') }}">Main</span></a>
+                            <a class="nav-link" href="{{ route('main.index') }}">Main</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('post.index') }}">Posts</a>
@@ -30,8 +30,7 @@
                 </div>
             </nav>
         </div>
+        @yield('content')
     </div>
-    
-    @yield('content')
 </body>
 </html>
