@@ -21,6 +21,9 @@
                             <a class="nav-link" href="{{ route('post.index') }}">Posts</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('order.index') }}">Orders</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('about.index') }}">About</a>
                         </li>
                         <li class="nav-item">

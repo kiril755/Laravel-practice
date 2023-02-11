@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// роуты (CRUD) для posts
 Route::get('/posts', 'App\Http\Controllers\PostController@index')->name('post.index');
 Route::get('/posts/create', 'App\Http\Controllers\PostController@create')->name('post.create'); 
 Route::post('/posts', 'App\Http\Controllers\PostController@store')->name('post.store'); 
@@ -24,6 +27,15 @@ Route::get('/posts/{post}', 'App\Http\Controllers\PostController@show')->name('p
 Route::get('/posts/{post}/edit', 'App\Http\Controllers\PostController@edit')->name('post.edit'); 
 Route::patch('/posts/{post}', 'App\Http\Controllers\PostController@update')->name('post.update');  
 Route::delete('/posts/{post}', 'App\Http\Controllers\PostController@destroy')->name('post.destroy');  
+
+// роуты (CRUD) для order
+Route::get('/order', 'App\Http\Controllers\OrderController@index')->name('order.index');
+Route::get('/order/create', 'App\Http\Controllers\OrderController@create')->name('order.create'); 
+Route::post('/order', 'App\Http\Controllers\OrderController@store')->name('order.store'); 
+Route::get('/order/{order}', 'App\Http\ControllerS\OrderController@show')->name('order.show');
+Route::get('/order/{order}/edit', 'App\Http\Controllers\OrderController@edit')->name('order.edit'); 
+Route::patch('/order/{order}', 'App\Http\Controllers\OrderController@update')->name('order.update');
+Route::delete('/order/{order}', 'App\Http\Controllers\OrderController@destroy')->name('order.destroy');
 
 Route::get('/posts/update', 'App\Http\Controllers\PostController@update'); 
 Route::get('/posts/delete', 'App\Http\Controllers\PostController@delete'); 
@@ -33,5 +45,3 @@ Route::get('/posts/update_or_create', 'App\Http\Controllers\PostController@updat
 Route::get('/main', 'App\Http\Controllers\MainController@index')->name('main.index');
 Route::get('/contacts', 'App\Http\Controllers\ContactController@index')->name('contact.index');
 Route::get('/about', 'App\Http\Controllers\AboutController@index')->name('about.index');
-
-Route::get('/order', 'App\Http\Controllers\OrderController@index');
