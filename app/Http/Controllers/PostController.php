@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Attribute;
@@ -12,8 +13,9 @@ class PostController  extends Controller
     public function index () {
         $category = Category::find(1);
         $post = Post::find(7);
+        $tag = Tag::find(1);
 
-        dd($post->category);
+        dd($tag->posts);
         // return view('post.index', compact('posts'));
     }
 
